@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="myAJAXlib.js">
+</script>
+<SCRIPT language="JavaScript" SRC="myJS.js">
+</SCRIPT>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+</head>
+<body> 
+
+<h1><b>RDF4J Client</b></h1>
+<p></p>
+
+
+<div>
+   <label>SPARQL endpoint (server location):</label><br />
+   <input type="text" id="serverLocation" value="http://localhost:8080/rdf4j-server" style="width:100%"> 
+</div>
+<div>
+   <label>SPARQL endpoint (repository ID):</label><br />
+   <input type="text" id="repoID" value="ties4520" style="width:100%"> 
+</div>
+<div>
+   <label>SPARQL query:</label><br />
+   <textarea id="queryText" style="width:100%; height:100px">PREFIX s: &lt;http://users.jyu.fi/~jopitikk/studyOntology.owl#&gt;
+   
+SELECT ?sub ?pred ?obj
+WHERE {
+    ?sub ?pred ?obj .
+}</textarea>
+   <button id="queryButton" onclick="doQuery();">Query</button>
+</div>
+<div>
+   <label>Result:</label><br />
+   <table id="result" style="width:100%" disabled></table> 
+</div>
+
+</body>
+</html>
